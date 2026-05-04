@@ -1,0 +1,59 @@
+Experiment: Enumeration & Password Cracking using Hashcat / John the Ripper (Kali Linux)
+🎯 Aim
+
+To perform password cracking on hashed data using Hashcat (or John the Ripper) in Kali Linux.
+
+🎯 Objectives
+To understand password hashing concepts
+To perform enumeration of hashed passwords
+To crack passwords using dictionary attacks
+To analyze password security weaknesses
+🧠 Concept (Short for Viva)
+Passwords are stored as hashes, not plain text
+Hashing is a one-way function
+Password cracking = guessing input → matching hash
+
+Tools:
+
+Hashcat → GPU-based (fast)
+John the Ripper → CPU-based (reliable fallback)
+⚙️ Tools Used
+4
+Hashcat
+John the Ripper
+rockyou wordlist
+🧾 Requirements
+Kali Linux
+Hash file
+Wordlist (rockyou.txt)
+🪜 Procedure (Step-by-Step)
+🔹 Step 1: Create Hash File
+echo "5f4dcc3b5aa765d61d8327deb882cf99" > hash.txt
+
+👉 (MD5 hash of "password")
+
+🔹 Step 2: Prepare Wordlist
+sudo gunzip /usr/share/wordlists/rockyou.txt.gz
+🔹 Step 3: Attempt Password Cracking using Hashcat
+hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
+
+👉 Note: Hashcat requires GPU/OpenCL support
+
+🔹 Step 4: Use John the Ripper (Fallback Method)
+john --format=raw-md5 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+🔹 Step 5: Display Cracked Password
+john --show --format=raw-md5 hash.txt
+
+👉 Output:
+
+password
+👀 Observations
+Hash file was successfully created
+Dictionary attack was performed using wordlist
+Hashcat could not run due to lack of GPU/OpenCL support
+John the Ripper was used as an alternative
+Password was successfully cracked
+Recovered password: password
+✅ Result
+
+The password hash was successfully cracked using a dictionary attack. The experiment demonstrated how weak passwords can be easily recovered using password cracking techniques.

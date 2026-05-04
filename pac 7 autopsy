@@ -1,0 +1,97 @@
+Experiment: Digital Forensics using Autopsy (Kali Linux)
+🎯 Aim
+
+To perform digital forensic analysis on a disk image using Autopsy in Kali Linux and study the process of extracting digital evidence.
+
+🎯 Objectives
+To understand digital forensics concepts
+To analyze disk images using Autopsy
+To study file system structure
+To recover deleted files
+To examine user activity and artifacts
+To understand forensic investigation workflow
+🧠 Concept (Short for Viva)
+
+Digital Forensics is the process of:
+
+Collecting
+Preserving
+Analyzing
+Reporting digital evidence
+
+Autopsy:
+
+GUI-based forensic tool
+Built on Sleuth Kit
+Works on disk images
+Recovers deleted files and user activity
+⚙️ Tool Used
+6
+Autopsy
+🧾 Requirements
+Kali Linux
+Autopsy installed
+Disk image file (.img / .dd) (optional for demo)
+🪜 Procedure (Step-by-Step)
+🔹 Step 1: Start Autopsy
+sudo autopsy
+
+👉 Open browser:
+
+http://localhost:9999/autopsy
+🔹 Step 2: Create New Case
+Click New Case
+Enter:
+Case Name
+Description
+Investigator Name
+Click Next → Finish
+🔹 Step 3: Add Data Source
+Click Add Data Source
+Select:
+Disk Image / VM File
+
+👉 (If no image available, demonstrate option only)
+
+🔹 Step 4: Enable Ingest Modules
+File Analysis
+Web Artifacts
+Keyword Search
+🔹 Step 5: Analyze Files
+Navigate to:
+File Views → All Files
+Explore system files
+🔹 Step 6: Recover Deleted Files
+Go to:
+Deleted Files
+View recovered data
+🔹 Step 7: Analyze Web Activity
+Check:
+Browser history
+Downloads
+Cookies
+🔹 Step 8: Keyword Search
+Search for keywords:
+password
+confidential
+🔹 Step 9: View Metadata
+Check:
+File creation time
+Modification time
+🔹 Step 10: Generate Report
+Export findings:
+HTML / PDF
+👀 Observations
+Autopsy was successfully launched
+Case creation process was completed
+Disk image option was explored
+Tool interface and modules were studied
+File analysis and recovery features were observed
+Forensic workflow was understood
+⚠️ Note (Important for Exam)
+
+A disk image is required for complete forensic analysis. In its absence, the tool workflow was demonstrated.
+
+✅ Result
+
+Digital forensic analysis using Autopsy was successfully performed. The tool demonstrated how digital evidence such as files, deleted data, and user activity can be analyzed.

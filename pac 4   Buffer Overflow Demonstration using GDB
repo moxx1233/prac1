@@ -1,0 +1,76 @@
+Experiment: Buffer Overflow Demonstration using GDB (Kali Linux)
+🎯 Aim
+
+To demonstrate a buffer overflow vulnerability and analyze it using the GDB debugger in Kali Linux.
+
+🎯 Objectives
+To understand buffer overflow vulnerability
+To study stack memory behavior
+To analyze program execution using GDB
+To observe program crash due to overflow
+🧠 Concept (Short for Viva)
+
+A buffer overflow occurs when input exceeds the allocated buffer size and overwrites adjacent memory.
+
+Stack contains:
+Local variables
+Return address
+
+👉 Overflow can overwrite return address → causes crash or abnormal behavior
+
+⚙️ Tools Used
+6
+GCC (compiler)
+GDB (debugger)
+🧾 Requirements
+Kali Linux
+GCC and GDB installed
+🪜 Procedure (Step-by-Step)
+🔹 Step 1: Create Vulnerable Program
+nano vuln.c
+
+Paste:
+
+#include <stdio.h>
+
+int main() {
+    char buffer[10];
+    printf("Enter input: ");
+    scanf("%s", buffer);
+    printf("You entered: %s\n", buffer);
+    return 0;
+}
+
+Save file.
+
+🔹 Step 2: Compile Program
+gcc -g -fno-stack-protector -z execstack vuln.c -o vuln
+🔹 Step 3: Run Program
+./vuln
+
+Enter large input:
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+👉 Program crashes (segmentation fault)
+
+🔹 Step 4: Debug using GDB
+gdb ./vuln
+🔹 Step 5: Run inside GDB
+run
+
+Enter long input again.
+
+🔹 Step 6: Analyze Registers
+info registers
+🔹 Step 7: View Stack Memory
+x/20x $esp
+👀 Observations
+Input exceeded buffer size
+Stack memory was overwritten
+Program crashed due to segmentation fault
+Registers showed corrupted values
+Demonstrated unsafe input handling
+✅ Result
+
+The buffer overflow vulnerability was successfully demonstrated using GDB. The experiment showed how improper input handling can lead to memory corruption and program crashes.

@@ -1,0 +1,73 @@
+Experiment: Encryption & Decryption using SHA-512 and RSA (Kali Linux)
+🎯 Aim
+
+To perform hashing using SHA-512 and encryption/decryption using RSA algorithm in Kali Linux.
+
+🎯 Objectives
+To understand hashing and encryption techniques
+To generate SHA-512 hash values
+To create RSA public and private keys
+To encrypt data using a public key
+To decrypt data using a private key
+🧠 Concept (Short for Viva)
+SHA-512 (Hashing):
+Converts input data into a fixed-length hash (one-way process)
+RSA (Encryption):
+Uses:
+Public key → Encryption
+Private key → Decryption
+
+👉 Hashing is irreversible, encryption is reversible
+
+⚙️ Tools Used
+4
+sha512sum
+openssl
+🧾 Requirements
+Kali Linux
+OpenSSL (pre-installed)
+🪜 Procedure (Step-by-Step)
+🔹 Step 1: Create a Text File
+echo "hello123" > file.txt
+🔹 Step 2: Generate SHA-512 Hash
+sha512sum file.txt
+
+👉 Produces a 512-bit hash value
+
+🔹 Step 3: Generate RSA Private Key
+openssl genrsa -out private.key 2048
+🔹 Step 4: Generate RSA Public Key
+openssl rsa -in private.key -pubout -out public.key
+🔹 Step 5: Encrypt File using Public Key
+openssl pkeyutl -encrypt \
+-pubin -inkey public.key \
+-in file.txt \
+-out encrypted.bin \
+-pkeyopt rsa_padding_mode:pkcs1
+
+👉 Output is in binary format
+
+🔹 Step 6: Verify Encrypted File
+hexdump -C encrypted.bin
+🔹 Step 7: Decrypt File using Private Key
+openssl pkeyutl -decrypt \
+-inkey private.key \
+-in encrypted.bin \
+-out decrypted.txt \
+-pkeyopt rsa_padding_mode:pkcs1
+🔹 Step 8: View Decrypted Content
+cat decrypted.txt
+
+👉 Output:
+
+hello123
+👀 Observations
+SHA-512 generated a fixed-length hash value
+Same input produced the same hash output
+RSA key pair (public & private) was successfully generated
+Data was encrypted into binary format
+Encrypted data was successfully decrypted
+Original message was recovered correctly
+✅ Result
+
+Hashing using SHA-512 and encryption/decryption using RSA were successfully performed in Kali Linux. The experiment demonstrated the difference between hashing (one-way) and encryption (two-way) techniques.

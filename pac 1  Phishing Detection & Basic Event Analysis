@@ -1,0 +1,95 @@
+Experiment: Phishing Detection & Basic Event Analysis using Kali Linux
+🎯 Aim
+
+To detect phishing attempts by analyzing URLs, email headers, and basic network activity using tools in Kali Linux.
+
+🎯 Objectives
+To understand phishing attacks
+To analyze suspicious URLs
+To examine email headers
+To identify malicious indicators
+To perform basic event analysis
+🧠 Concept (Short for Viva)
+
+Phishing is a cyber attack where attackers trick users into revealing sensitive data.
+
+Detection involves:
+
+Checking URLs
+Analyzing email headers
+Identifying suspicious domains
+Monitoring unusual activity
+⚙️ Tools Used (Kali)
+whois
+nslookup / dig
+curl
+Browser (for inspection)
+🪜 Procedure (Step-by-Step in Kali)
+🔹 Step 1: Identify Suspicious URL
+
+Example:
+
+http://secure-login-paypal.xyz
+
+👉 (Any fake-looking domain works for demo)
+
+🔹 Step 2: Perform WHOIS Lookup
+whois secure-login-paypal.xyz
+
+👉 Check:
+
+Domain creation date
+Owner info
+
+📌 Phishing domains are usually recently created
+
+🔹 Step 3: DNS Lookup
+nslookup secure-login-paypal.xyz
+
+OR
+
+dig secure-login-paypal.xyz
+
+👉 Check:
+
+IP address
+Hosting location
+🔹 Step 4: Fetch Website Headers
+curl -I http://secure-login-paypal.xyz
+
+👉 Observe:
+
+Server type
+Response headers
+🔹 Step 5: Analyze URL Structure
+
+Check manually:
+
+Misspelled domain
+Extra words (login, secure, verify)
+Suspicious TLD (.xyz, .tk)
+🔹 Step 6: (Optional) Check HTTPS
+
+👉 If no HTTPS:
+
+More suspicious
+🔹 Step 7: Basic Event Analysis (Conceptual)
+
+👉 Correlate:
+
+User clicked link
+DNS request generated
+Website accessed
+
+📌 This is basic event correlation
+
+👀 Observations
+Suspicious domain name detected
+WHOIS showed recently registered domain
+DNS lookup revealed unknown hosting server
+URL structure contained phishing indicators
+Website lacked proper security (HTTPS)
+Indicators suggested possible phishing attempt
+✅ Result
+
+The phishing attempt was successfully identified by analyzing the URL, domain information, and network details using Kali Linux tools. The experiment demonstrated how phishing attacks can be detected using basic analysis techniques.

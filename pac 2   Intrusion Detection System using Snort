@@ -1,0 +1,57 @@
+Experiment: Intrusion Detection System using Snort (Kali Linux)
+🎯 Aim
+
+To configure and use Snort as an Intrusion Detection System (IDS) to monitor and analyze network traffic in Kali Linux.
+
+🎯 Objectives
+To understand the concept of IDS and IPS
+To install and configure Snort
+To monitor network traffic using Snort
+To analyze packets based on predefined rules
+To detect suspicious or malicious activity
+🧠 Concept (Short for Viva)
+
+Snort is an open-source network security tool that works as:
+
+IDS → Detects and alerts
+IPS → Detects and blocks
+
+It uses:
+
+Packet sniffing
+Rule-based detection
+⚙️ Tools Used
+7
+Snort (Snort 3)
+Kali Linux
+🧾 Requirements
+Kali Linux
+Snort installed
+Active network interface (eth0)
+🪜 Procedure (Step-by-Step)
+🔹 Step 1: Check Network Interface
+ip a
+
+👉 Identify interface (eth0)
+
+🔹 Step 2: Run Snort
+sudo snort -c /etc/snort/snort.lua -i eth0 -A alert_fast
+
+👉 Snort starts monitoring traffic
+
+🔹 Step 3: Generate Network Traffic
+
+Open another terminal:
+
+ping 8.8.8.8
+🔹 Step 4: Observe Output
+Snort displays packet activity
+Alerts generated if rules match
+👀 Observations
+Snort successfully loaded configuration and rules
+Network traffic was monitored on eth0 interface
+ICMP traffic (ping) was observed
+No alerts were generated for normal traffic
+✅ Result
+
+Snort was successfully configured and used as an Intrusion Detection System to monitor and analyze network traffic in real time.

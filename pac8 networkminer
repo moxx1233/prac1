@@ -1,0 +1,83 @@
+Experiment: Network Traffic Analysis using NetworkMiner (Kali Linux)
+🎯 Aim
+
+To capture and analyze network traffic using tcpdump and NetworkMiner in Kali Linux.
+
+🎯 Objectives
+To understand network traffic analysis
+To capture live network traffic using tcpdump
+To analyze .pcap files using NetworkMiner
+To identify hosts, sessions, and DNS activity
+To extract files, images, and credentials (if available)
+🧠 Concept (Short for Viva)
+
+Network Traffic Analysis involves monitoring and inspecting packets flowing through a network.
+
+tcpdump → captures network packets
+NetworkMiner → analyzes captured packets (PCAP files)
+NetworkMiner is a passive tool (does not generate traffic)
+⚙️ Tools Used
+6
+tcpdump (for packet capture)
+NetworkMiner (for analysis)
+🧾 Requirements
+Kali Linux
+NetworkMiner installed
+Internet connection
+🪜 Procedure (Step-by-Step)
+🔹 Step 1: Identify Network Interface
+ip a
+
+👉 Interface identified: eth0
+
+🔹 Step 2: Capture Network Traffic using tcpdump
+sudo tcpdump -i eth0 -w test.pcap
+Tool starts capturing packets
+🔹 Step 3: Generate Network Traffic
+Open browser
+Visit:
+http://example.com
+http://neverssl.com
+
+👉 (Use HTTP for visible data)
+
+🔹 Step 4: Stop Capture
+
+Press:
+
+Ctrl + C
+
+👉 Packets captured successfully
+
+🔹 Step 5: Launch NetworkMiner
+mono NetworkMiner.exe
+🔹 Step 6: Load PCAP File
+Click File → Open
+Select:
+test.pcap
+🔹 Step 7: Analyze Hosts
+Open Hosts Tab
+View:
+Source IP
+Destination IP
+🔹 Step 8: Analyze DNS Activity
+Observe domains accessed
+Example:
+example.com
+neverssl.com
+🔹 Step 9: Analyze Files and Images
+Open Files Tab → extracted files
+Open Images Tab → transferred images
+🔹 Step 10: Check Credentials
+Open Credentials Tab
+Observe if any username/password present
+👀 Observations
+Network traffic was successfully captured using tcpdump
+Multiple hosts were identified in the Hosts tab
+DNS queries revealed accessed websites
+Limited files and images were extracted
+No credentials were found due to encrypted traffic
+Communication between client and server was observed
+✅ Result
+
+The network traffic was successfully captured using tcpdump and analyzed using NetworkMiner. Important artifacts such as hosts and DNS queries were identified, demonstrating the effectiveness of network traffic analysis in monitoring and investigating network activities.

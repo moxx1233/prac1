@@ -1,0 +1,70 @@
+Experiment: WLAN Penetration Testing using Kismet (Kali Linux)
+🎯 Aim
+
+To analyze wireless networks and identify their security configurations using Kismet in Kali Linux.
+
+🎯 Objectives
+To understand WLAN penetration testing
+To scan wireless networks using Kismet
+To identify SSIDs and connected devices
+To analyze encryption types (WEP/WPA/WPA2)
+To study wireless network behavior
+🧠 Concept (Short for Viva)
+
+WLAN penetration testing involves analyzing wireless networks to detect vulnerabilities.
+
+Kismet is a:
+
+Passive wireless network monitoring tool
+Detects networks without sending packets
+Identifies hidden SSIDs and connected clients
+
+👉 Requires monitor mode + wireless adapter
+
+⚙️ Tool Used
+7
+Kismet
+🧾 Requirements
+Kali Linux
+Wireless adapter (monitor mode support)
+Kismet installed
+🪜 Procedure (Step-by-Step)
+🔹 Step 1: Check Network Interfaces
+iwconfig
+
+👉 No wireless interface detected in VM
+
+🔹 Step 2: Start Kismet
+sudo kismet
+🔹 Step 3: Open Web Interface
+
+Open browser and go to:
+
+http://localhost:2501
+🔹 Step 4: Login to Kismet
+Username: kismet
+Password: kismet
+🔹 Step 5: Observe Dashboard
+Networks tab
+Devices tab
+Channel information
+🔹 Step 6: Attempt to Add Data Source
+No wireless interface available
+No data source added
+🔹 Step 7: Analyze Tool Functionality
+Study interface
+Understand scanning process
+👀 Observations
+Kismet was successfully launched
+Web interface was accessed via localhost
+No wireless networks were detected
+No data source was available
+Tool functionality was studied conceptually
+Wireless interface was not present in the virtual environment
+⚠️ Important Note
+
+Wireless scanning could not be performed because the virtual machine does not provide access to a physical wireless adapter.
+
+✅ Result
+
+Wireless network analysis using Kismet was studied successfully. Although no live scanning was possible, the working of the tool and its features were understood.
